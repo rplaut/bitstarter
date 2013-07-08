@@ -1,13 +1,10 @@
-var express = require('express');
+var express = require('express'), fs = require('fs');
 
 var app = express.createServer(express.logger());
 
 // My addtions
-// var newText = fs.readFile("index.html");
-// var newText = buf.toString(newText);
+var newText = fs.readFileSync("index.html", "utf8");
 //
-
-var newText = "";
 
 app.get('/', function(request, response) {
   response.send('Hello World 2!' + newText);
